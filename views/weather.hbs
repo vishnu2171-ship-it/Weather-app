@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style-nav.css">
+    <link rel="stylesheet" href="style-weather.css">
+    {{>bootstrap}}
+    
+</head>
+<body style="background-color:#212F3C ;">
+    {{>navbar}}
+    <h1 style="text-align: center; color:white">Check Weather</h1>
+    <div class="weather">
+        <div class=" wea relative mb-4">
+            <div class="label"><label style="color: white; font-size: 30px; padding-bottom:2rem" id="city" for="name" class="leading-7 text-sm text-gray-600">Enter City Name</label></div>
+            <form >
+            <input id="cityname" autocomplete="off" placeholder="Enter city name" type="text" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+            <div class="sub_btn"><button id="sub_btn" type="submit"  class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Check Weather</button></div>
+            </form> 
+        </div> 
+    </div>  
+<div class="outer">
+    
+    <div class="box">
+        <div class="card" style="">
+             <img id="im" src="https://source.unsplash.com/1600x900/?weather,climate change" class="card-img-top" alt="...">
+             <div class="card-body">
+                 <h5 style="opacity: 0.5;" id="error" class="card-title">Check weather....</h5>
+                 <h4 id="city-name" class="card-title"></h4>
+                 <h5  class="card-title"><span id="temperature">0</span><sup>o</sup><span>C</span></h5>
+                 <h5 id="temp_status" class="card-title"></h5>
+                 
+                 <p id="date-and-time" class="card-text"></p>
+                 <p id="time"></p>
+                 <a href="/" class="btn btn-primary">Home</a>
+            </div>
+        </div>
+
+       
+        
+    </div> 
+</div>
+
+
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="text-center mb-20">
+      <h1 style="color: white;" class="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">Additional data</h1>
+
+    <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
+      <div class="p-2 sm:w-1/2 w-full">
+        <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+            <i style="font-size: 2rem;" class="fas fa-temperature-low"></i>
+            <path d="M22 4L12 14.01l-3-3"></path>
+          </svg>
+          <span class="title-font font-medium">Min Temp: <span id="min-temp">0</span><sup>o</sup><span>C</span></span>
+        </div>
+      </div>
+      <div class="p-2 sm:w-1/2 w-full">
+        <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+            <i style="font-size: 2rem;" class="fas fa-temperature-high"></i>
+            <path d="M22 4L12 14.01l-3-3"></path>
+          </svg>
+          <span class="title-font font-medium">Max Temp: <span id="max-temp">0</span><sup>o</sup><span>C</span></span>
+        </div>
+      </div>
+      <div class="p-2 sm:w-1/2 w-full">
+        <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+            <i style="font-size: 2rem;" class="fas fa-wind"></i>
+            <path d="M22 4L12 14.01l-3-3"></path>
+          </svg>
+          <span class="title-font font-medium">Wind Speed: <span id="wind-speed">0</span><sup>km/s</sup></span>
+        </div>
+      </div>
+      <div class="p-2 sm:w-1/2 w-full">
+        <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+            <i style="font-size: 2rem;" class="fas fa-tachometer-alt"></i>
+            <path d="M22 4L12 14.01l-3-3"></path>
+          </svg>
+          <span class="title-font font-medium">Pressure: <span id="pressure">0</span><sup>mbar</sup></span>
+        </div>
+      </div>
+      <div class="p-2 sm:w-1/2 w-full">
+        <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+            <i style="font-size: 2rem;" class="fas fa-cloud-sun"></i>
+            <path d="M22 4L12 14.01l-3-3"></path>
+          </svg>
+          <span class="title-font font-medium">Humidity: <span id="humidity">0</span><sup>%</sup></span>
+        </div>
+      </div>
+      <div class="p-2 sm:w-1/2 w-full">
+        <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+           <i style="font-size: 2rem;" class="fas fa-scroll"></i>
+          </svg>
+          <span class="title-font font-medium">Description: <span id="description"></span></span>
+        </div>
+      </div>
+    </div>
+    <button id="clearButton" class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Clear Data</button>
+  </div>
+</section>
+<script src="js/weather-checker.js"></script>
+</body>
+</html>
